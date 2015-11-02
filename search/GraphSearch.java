@@ -1,18 +1,20 @@
 package search;
 
 import java.util.Set;
+import java.util.HashSet;
 
-public class TreeSearch implements Search{
+public class GraphSearch implements Search {
   private Frontier frontier;
   private int generated;
 
-  public TreeSearch(Frontier frontier) {
+  public GraphSearch(Frontier frontier) {
     this.frontier = frontier;
     this.generated = 0;
   }
 
 	public Node findSolution(State initialConfiguration, GoalTest goalTest) {
     this.generated = 0;
+    Set<State> seenStates = new HashSet<State>();
     this.frontier.clear();
 		this.frontier.add(new Node(null, null, initialConfiguration));
     while (!this.frontier.isEmpty()) {
@@ -22,8 +24,11 @@ public class TreeSearch implements Search{
 			else {
 				for (Action action : node.state.getApplicableActions()) {
 					State newState = node.state.getActionResult(action);
-					this.frontier.add(new Node(node, action, newState));
-          this.generated += 1;
+          if (!seenStates.contains(newState)) {
+            seenStates.add(newState);
+            this.frontier.add(new Node(node, action, newState));
+            this.generated += 1;
+          }
 				}
 			}
     }

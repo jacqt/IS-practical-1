@@ -5,4 +5,5 @@ public interface Frontier {
   public void clear();
   public boolean isEmpty();
   public Node pop();
+  public int maxNodesStored();
 }
