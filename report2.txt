@@ -1,0 +1,59 @@
+Intelligent Systems: Practical 2
+
+This is the output of running on the npuzzle:
+
+============================
+A* Graph search
+
+Number of nodes generated: 189
+Max number of nodes stored: 82
+
+============================
+A* Tree search
+
+Number of nodes generated: 963
+Max number of nodes stored: 613
+
+Explanation:
+
+When compared to the results of the previous practiacl we see that the number
+of nodes generated is significantly smaller, though there is a higher space requirement
+for graph search.
+
+When comparing graph and tree search, it is clear that the tree search is more space
+intensive and explores more nodes, because it is a tree search. Since the heuristic
+is admissable, both return optimal results.
+
+This is the output of running on the romania tour.
+
+============================
+A* Graph search
+
+Number of nodes generated: 192
+Max number of nodes stored: 95
+
+============================
+A* Tree search
+
+Number of nodes generated: 452
+Max number of nodes stored: 291
+
+============================
+A* Graph search (BIG ROMANIA MAP)
+
+Number of nodes generated: 24054
+Max number of nodes stored: 7419
+
+============================
+A* Tree search (BIG ROMANIA MAP)
+ -- No termination
+
+Similar reasoning from the npuzzle case applies to each of the cases in the
+Romania tour example. The heuristic we used was the distance from the current city to
+the farthest city  + the distance from the farthest city to the start city (in the
+case that the fartehst city was already visited, the heuristic was simply the
+cost to the startCity). Since it is an admissable heuristic, it returns an optimal
+result.
+
+However, it does generate more nodes than the Graph dfs, because the dfs does not
+provide for a optimal solution.

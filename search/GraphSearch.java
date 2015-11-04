@@ -16,7 +16,7 @@ public class GraphSearch implements Search {
     this.generated = 0;
     Set<State> seenStates = new HashSet<State>();
     this.frontier.clear();
-		this.frontier.add(new Node(null, null, initialConfiguration));
+		this.frontier.add(new Node(null, null, initialConfiguration, 0));
     while (!this.frontier.isEmpty()) {
 			Node node = this.frontier.pop();
 			if (goalTest.isGoal(node.state))
@@ -26,7 +26,7 @@ public class GraphSearch implements Search {
 					State newState = node.state.getActionResult(action);
           if (!seenStates.contains(newState)) {
             seenStates.add(newState);
-            this.frontier.add(new Node(node, action, newState));
+            this.frontier.add(new Node(node, action, newState, node.depth + action.cost()));
             this.generated += 1;
           }
 				}

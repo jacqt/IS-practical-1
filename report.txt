@@ -1,0 +1,76 @@
+Intelligent Systems: Practical 1
+
+This is the output of running on the npuzzle: 
+
+============================
+Graph - bfs
+
+Number of nodes generated: 4359
+Max number of nodes stored: 1592
+
+============================
+Graph - dfs
+
+Number of nodes generated: 34266
+Max number of nodes stored: 14480
+
+============================
+Tree - bfs
+
+Number of nodes generated: 2298273
+Max number of nodes stored: 1473871
+
+============================
+Iterative deepening
+
+Number of nodes generated: 1211840
+Max number of nodes stored: 25
+
+Explanation:
+
+The Graph BFS generates the fewest nodes since it examines them in the order
+of shortest distance from the starting node. However, because it enumerates
+them all, it stores a large number of nodes.
+
+The Graph DFS generates many more nodes because it proceeds in a depth first
+manner, and since there are paths of infinite depth in the npuzzle. 
+
+The Tree BFS has many nodes generated and many nodes stored because the number
+of moves grows exponentially with the number of steps going down. 
+
+The Tree DFS results in an outOfMemoryException, since too many nodes are added
+to the frontier.
+
+The Iterative Deepening case generates very few nodes because it is
+essentially a dfs, but generates a large number of nodes because it traverses
+many nodes multiple times.
+
+
+This is the output of running on the romania tour.
+
+============================
+Graph - bfs
+
+Number of nodes generated: 946
+Max number of nodes stored: 186
+
+============================
+Graph - dfs
+
+Number of nodes generated: 61
+Max number of nodes stored: 19
+
+============================
+Tree - bfs
+
+Number of nodes generated: 75972
+Max number of nodes stored: 44217
+
+============================
+Iterative deepening
+
+Number of nodes generated: 41623
+Max number of nodes stored: 22
+
+Similar reasoning from the npuzzle case applies to each of the cases in the
+Romania tour example.
