@@ -17,7 +17,7 @@ public class Planet {
         if (offx>=0 && offy>=0 && offx<accessible.length && offy<accessible[0].length) return (accessible[offx][offy]==0);
         else return false;
     }
-    
+
     public int height() {return accessible.length;}
     public int width() {return accessible[0].length;}
 }
