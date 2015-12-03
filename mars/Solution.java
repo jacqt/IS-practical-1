@@ -10,12 +10,6 @@ public class Solution {
     NodeFunction h = new MarsHeuristic();
     NodeFunction a_star = new AStarFunction(h);
 
-    //tryAlgo("Graph - bfs", new GraphSearch(new BreadthFirstFrontier()), initialConfiguration, goalTest);
-    //tryAlgo("Graph - dfs", new GraphSearch(new DepthFirstFrontier()), initialConfiguration, goalTest);
-    //tryAlgo("Tree - bfs", new TreeSearch(new BreadthFirstFrontier()), initialConfiguration, goalTest);
-    // tryAlgo("Tree - dfs", new TreeSearch(new DepthFirstFrontier()), initialConfiguration, goalTest); //- this causes an outOfMemoryError...
-    //tryAlgo("Iterative deepening", new IterativeDeepeningTreeSearch(), initialConfiguration, goalTest);
-
     tryAlgo("A* Graph search", new GraphSearch(new BestFirstFrontier(a_star)), initialConfiguration, goalTest);
     tryAlgo("A* Tree search", new TreeSearch(new BestFirstFrontier(a_star)), initialConfiguration, goalTest);
   }

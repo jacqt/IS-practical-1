@@ -1,0 +1,17 @@
+Practical 3:
+
+============================
+A* Graph search
+
+Number of nodes generated: 1162
+Max number of nodes stored: 599
+Number of visited locations: 18
+
+============================
+A* Tree search
+
+Number of nodes generated: 1404
+Max number of nodes stored: 796
+Number of visited locations: 18
+
+
